@@ -1,0 +1,232 @@
+<!DOCTYPE html> 
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="iconee.png" type="image/x-icon">
+    <title>Agência de Viagens</title>
+    <style>
+        header {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #845ec2; /* Cor de fundo do cabeçalho */
+            flex-wrap: wrap; /* Permite que os itens se movam para a próxima linha */
+        }
+        header img {
+            width: 50px; /* Tamanho da logo */
+            margin-right: 10px; /* Espaço entre a logo e o título */
+        }
+        header h1 {
+            flex: 1; /* Para que o título ocupe o espaço disponível */
+            color: #fff; /* Cor do título */
+        }
+        nav {
+            margin-left: auto; /* Para alinhar o menu à direita */
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap; /* Permite que os itens do menu se movam para a próxima linha em telas menores */
+        }
+        nav li {
+            margin-left: 20px; /* Espaço entre os itens do menu */
+        }
+        nav a {
+            color: #fff; /* Cor dos links do menu */
+            text-decoration: none;
+            transition: color 0.3s; /* Efeito de transição */
+        }
+        nav a:hover {
+            color: #ff6f91; /* Cor ao passar o mouse */
+        }
+        section {
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #845ec2; /* Cor dos títulos */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden; /* Para aplicar o border-radius */
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #845ec2; /* Cor do cabeçalho da tabela */
+            color: #fff;
+        }
+        tr:hover {
+            background-color: rgba(255, 111, 145, 0.2); /* Efeito hover nas linhas */
+        }
+        .remove-btn {
+            background-color: #ff6f91; /* Cor do botão de remover */
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .remove-btn:hover {
+            background-color: #ff3b5a; /* Cor ao passar o mouse */
+        }
+        .checkout-btn {
+            background-color: #845ec2; /* Cor do botão de finalizar compra */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            display: inline-block; /* Para o botão de finalizar compra ficar alinhado */
+        }
+        .checkout-btn:hover {
+            background-color: #6a3d9a; /* Cor ao passar o mouse */
+        }
+        footer {
+            background-color: #845ec2; /* Cor de fundo do footer */
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        .footer-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-column {
+            margin: 10px 20px;
+            flex: 1 1 200px; /* Flexível para permitir que os itens se ajustem em telas menores */
+        }
+        .footer-column h3 {
+            margin-bottom: 10px;
+            color: #ffc75f; /* Amarelo para destaque */
+        }
+        .footer-column a {
+            color: #f9f871; /* Amarelo claro */
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+            transition: color 0.3s ease;
+        }
+        .footer-column a:hover {
+            color: #ff6f91; /* Rosa vibrante ao hover */
+        }
+
+        /* Media Queries para Responsividade */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column; /* Permite que os itens do cabeçalho se empilhem */
+                align-items: flex-start; /* Alinha os itens à esquerda */
+            }
+            nav ul {
+                flex-direction: column; /* Alinha os itens do menu verticalmente */
+                margin-top: 10px; /* Espaço acima do menu */
+            }
+            nav li {
+                margin-left: 0; /* Remove o espaço à esquerda */
+                margin-bottom: 10px; /* Espaço entre os itens do menu */
+            }
+            section {
+                padding: 15px; /* Reduz o padding da seção */
+            }
+            h1, h2 {
+                font-size: 1.5em; /* Reduz o tamanho do título em telas menores */
+            }
+            table {
+                font-size: 0.9em; /* Reduz o tamanho da fonte da tabela */
+            }
+        }
+
+        @media (max-width: 480px) {
+            header img {
+                width: 40px; /* Reduz o tamanho da logo em telas menores */
+            }
+            .checkout-btn {
+                width: 100%; /* Botão de finalizar compra ocupa a largura total */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="iconee.png" alt="Logo da Viaje Bem">
+        <h1>Viaje Bem</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinos.html">Destinos</a></li>
+                <li><a href="ofertas.html">Ofertas</a></li>
+                <li><a href="depoimentos.html">Depoimentos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="carrinho.html">Carrinho (<span id="cart-count">0</span>)</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br>
+    <br>
+    <section>
+        <img src="bahia.png" alt="Bahia" class="destination-image">
+        <h2>Pacote para Bahia, BA</h2>
+        <hr>
+        <br>
+        <h3>Descrição do lugar</h3>
+        <p>O estado da Bahia é repleto de cultura, com suas festas populares, gastronomia e paisagens que combinam praias tropicais e cidades históricas como Salvador.</p>
+        <br>
+        <h3>Pacote</h3>
+        <p> 6 noites com hospedagem em Salvador e na Ilha de Itaparica. Inclui passeio pelo Pelourinho, Elevador Lacerda e praias da Ilha de Itaparica.</p>
+        <br>
+        <h3>Preço</h3>
+        <p>R$ 4.000,00 por pessoa</p>
+        <br>
+        <button class="add-to-cart" data-item-name="Bahia" data-item-price="4000.00">Adicionar ao Carrinho</button>
+    </section>
+    <br>
+    <br>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Redes Sociais</h3>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank">Facebook</a>
+                    <a href="https://twitter.com" target="_blank">Twitter</a>
+                    <a href="https://instagram.com" target="_blank">Instagram</a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Informações</h3>
+                <a href="sobre.html">Sobre Nós</a>
+                <a href="contato.html">Contato</a>
+                <a href="depoimentos.html">Depoimentos</a>
+            </div>
+            <div class="footer-column">
+                <h3>Ajuda</h3>
+                <a href="#">Termos de Serviço</a>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">FAQ</a>
+            </div>
+        </div>
+        <p>&copy; 2024 Viaje Bem. Todos os direitos reservados.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

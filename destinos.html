@@ -1,0 +1,331 @@
+<!DOCTYPE html> 
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="iconee.png" type="image/x-icon">
+    <title>Agência de Viagens</title>
+    <style>
+        header {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #845ec2; /* Cor de fundo do cabeçalho */
+            flex-wrap: wrap; /* Para permitir que os itens se ajustem em telas menores */
+        }
+        header img {
+            width: 50px; /* Tamanho da logo */
+            margin-right: 10px; /* Espaço entre a logo e o título */
+        }
+        header h1 {
+            flex: 1; /* Para que o título ocupe o espaço disponível */
+            color: #fff; /* Cor do título */
+        }
+        nav {
+            margin-left: auto; /* Para alinhar o menu à direita */
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap; /* Permitir que o menu quebre em várias linhas se necessário */
+        }
+        nav li {
+            margin-left: 20px; /* Espaço entre os itens do menu */
+        }
+        nav a {
+            color: #fff; /* Cor dos links do menu */
+            text-decoration: none;
+            transition: color 0.3s; /* Efeito de transição */
+        }
+        nav a:hover {
+            color: #ff6f91; /* Cor ao passar o mouse */
+        }
+        section {
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #845ec2; /* Cor dos títulos */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden; /* Para aplicar o border-radius */
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #845ec2; /* Cor do cabeçalho da tabela */
+            color: #fff;
+        }
+        tr:hover {
+            background-color: rgba(255, 111, 145, 0.2); /* Efeito hover nas linhas */
+        }
+        .remove-btn {
+            background-color: #ff6f91; /* Cor do botão de remover */
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .remove-btn:hover {
+            background-color: #ff3b5a; /* Cor ao passar o mouse */
+        }
+        .checkout-btn {
+            background-color: #845ec2; /* Cor do botão de finalizar compra */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            display: inline-block; /* Para o botão de finalizar compra ficar alinhado */
+        }
+        .checkout-btn:hover {
+            background-color: #6a3d9a; /* Cor ao passar o mouse */
+        }
+        footer {
+            background-color: #845ec2; /* Cor de fundo do footer */
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        .footer-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-column {
+            margin: 10px 20px;
+            flex: 1 1 200px;
+        }
+        .footer-column h3 {
+            margin-bottom: 10px;
+            color: #ffc75f; /* Amarelo para destaque */
+        }
+        .footer-column a {
+            color: #f9f871; /* Amarelo claro */
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+            transition: color 0.3s ease;
+        }
+        .footer-column a:hover {
+            color: #ff6f91; /* Rosa vibrante ao hover */
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column; /* Altera para coluna em telas menores */
+                align-items: flex-start;
+            }
+            nav ul {
+                flex-direction: column; /* Muda o menu para coluna em telas menores */
+                align-items: flex-start;
+                width: 100%;
+                padding: 0;
+                margin-top: 10px; /* Adiciona espaço entre o título e o menu */
+            }
+            nav li {
+                margin: 5px 0; /* Ajusta o espaçamento entre os itens do menu */
+            }
+            section {
+                padding: 15px; /* Reduz o padding da seção */
+                margin: 10px; /* Ajusta a margem */
+            }
+            table {
+                font-size: 14px; /* Reduz o tamanho da fonte da tabela */
+            }
+            th, td {
+                padding: 10px; /* Ajusta o padding da tabela */
+            }
+            footer {
+                padding: 15px; /* Ajusta o padding do footer */
+            }
+            .footer-column {
+                margin: 10px 0; /* Ajusta a margem entre as colunas do footer */
+            }
+        }
+
+        @media (max-width: 480px) {
+            header img {
+                width: 40px; /* Reduz o tamanho da logo em telas menores */
+            }
+            .checkout-btn {
+                padding: 8px 15px; /* Ajusta o tamanho do botão */
+            }
+            .remove-btn {
+                padding: 4px 8px; /* Ajusta o tamanho do botão de remover */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="iconee.png" alt="Logo da Viaje Bem">
+        <h1>Viaje Bem</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinos.html">Destinos</a></li>
+                <li><a href="ofertas.html">Ofertas</a></li>
+                <li><a href="depoimentos.html">Depoimentos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="carrinho.html">Carrinho (<span id="cart-count">0</span>)</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br>
+    <br>
+
+    <section id="destinos">
+        <h1>Destinos</h1>
+        <br>
+        <div class="destinos-container">
+            <div class="destino" data-id="destino-1">
+                <img src="praia_do_forte.png" alt="Praia do Forte" class="destino-image">
+                <h3><a href="detalhes_praia_do_forte.html" class="content-link">Praia do Forte, BA</a></h3>
+                <p>R$ 3.500,00</p>
+                <button class="add-to-cart" data-item-name="Praia do Forte" data-item-price="3500.00">Adicionar ao Carrinho</button>
+            </div>
+            <div class="destino" data-id="destino-2">
+                <img src="fernando_de_noronha.png" alt="Fernando de Noronha" class="destino-image">
+                <h3><a href="detalhes_fernando_de_noronha.html" class="content-link">Fernando de Noronha, PE</a></h3>
+                <p>R$ 7.200,00</p>
+                <button class="add-to-cart" data-item-name="Fernando de Noronha" data-item-price="7200.00">Adicionar ao Carrinho</button>
+            </div>
+            <div class="destino" data-id="destino-3">
+                <img src="rio_de_janeiro.png" alt="Rio de Janeiro" class="destino-image">
+                <h3><a href="detalhes_rio_de_janeiro.html" class="content-link">Rio de Janeiro, RJ</a></h3>
+                <p>R$ 2.800,00</p>
+                <button class="add-to-cart" data-item-name="Rio de Janeiro" data-item-price="2800.00">Adicionar ao Carrinho</button>
+            </div>
+            <div class="destino" data-id="destino-4">
+                <img src="bahia.png" alt="Bahia" class="destino-image">
+                <h3><a href="detalhes_bahia.html" class="content-link">Bahia, BA</a></h3>
+                <p>R$ 4.000,00</p>
+                <button class="add-to-cart" data-item-name="Bahia" data-item-price="4000.00">Adicionar ao Carrinho</button>
+            </div>
+            <div class="destino" data-id="destino-5">
+                <img src="sao_paulo.png" alt="São Paulo" class="destino-image">
+                <h3><a href="detalhes_sao_paulo.html" class="content-link">São Paulo, SP</a></h3>
+                <p>R$ 2.100,00</p>
+                <button class="add-to-cart" data-item-name="São Paulo" data-item-price="2100.00">Adicionar ao Carrinho</button>
+            </div>
+            <div class="destino" data-id="destino-6">
+                <img src="florianopolis.png" alt="Florianópolis" class="destino-image">
+                <h3><a href="detalhes_florianopolis.html" class="content-link">Florianópolis, SC</a></h3>
+                <p>R$ 3.800,00</p>
+                <button class="add-to-cart" data-item-name="Florianópolis" data-item-price="3800.00">Adicionar ao Carrinho</button>
+            </div>
+            <div class="destino" data-id="destino-7">
+                <img src="fortaleza.png" alt="Fortaleza" class="destino-image">
+                <h3><a href="detalhes_fortaleza.html" class="content-link">Fortaleza, CE</a></h3>
+                <p>R$ 2.500,00</p>
+                <button class="add-to-cart" data-item-name="Fortaleza" data-item-price="2500.00">Adicionar ao Carrinho</button>
+            </div>
+            <div class="destino" data-id="destino-8">
+                <img src="curitiba.png" alt="Curitiba" class="destino-image">
+                <h3><a href="detalhes_curitiba.html" class="content-link">Curitiba, PR</a></h3>
+                <p>R$ 1.900,00</p>
+                <button class="add-to-cart" data-item-name="Curitiba" data-item-price="1900.00">Adicionar ao Carrinho</button>
+            </div>
+            <div class="destino" data-id="destino-9">
+                <img src="salvador.png" alt="Salvador" class="destino-image">
+                <h3><a href="detalhes_salvador.html" class="content-link">Salvador, BA</a></h3>
+                <p>R$ 3.200,00</p>
+                <button class="add-to-cart" data-item-name="Salvador" data-item-price="3200.00">Adicionar ao Carrinho</button>
+            </div>
+            <div class="destino" data-id="destino-10">
+                <img src="maceio.png" alt="Maceió" class="destino-image">
+                <h3><a href="detalhes_maceio.html" class="content-link">Maceió, AL</a></h3>
+                <p>R$ 2.400,00</p>
+                <button class="add-to-cart" data-item-name="Maceió" data-item-price="2400.00">Adicionar ao Carrinho</button>
+            </div>
+            <div class="destino" data-id="destino-11">
+                <img src="gramado.png" alt="Gramado" class="destino-image">
+                <h3><a href="detalhes_gramado.html" class="content-link">Gramado, RS</a></h3>
+                <p>R$ 3.000,00</p>
+                <button class="add-to-cart" data-item-name="Gramado" data-item-price="3000.00">Adicionar ao Carrinho</button>
+            </div>
+            <div class="destino" data-id="destino-12">
+                <img src="porto_de_galinhas.png" alt="Porto de Galinhas" class="destino-image">
+                <h3><a href="detalhes_porto_de_galinhas.html" class="content-link">Porto de Galinhas, PE</a></h3>
+                <p>R$ 3.500,00</p>
+                <button class="add-to-cart" data-item-name="Porto de Galinhas" data-item-price="3500.00">Adicionar ao Carrinho</button>
+            </div>
+            <div class="destino" data-id="destino-13">
+                <img src="olinda.png" alt="Olinda" class="destino-image">
+                <h3><a href="detalhes_olinda.html" class="content-link">Olinda, PE</a></h3>
+                <p>R$ 2.200,00</p>
+                <button class="add-to-cart" data-item-name="Olinda" data-item-price="2200.00">Adicionar ao Carrinho</button>
+            </div>
+            <div class="destino" data-id="destino-14">
+                <img src="sao_miguel_dos_milagres.png" alt="São Miguel dos Milagres" class="destino-image">
+                <h3><a href="detalhes_sao_miguel_dos_milagres.html" class="content-link">São Miguel dos Milagres, AL</a></h3>
+                <p>R$ 3.600,00</p>
+                <button class="add-to-cart" data-item-name="São Miguel dos Milagres" data-item-price="3600.00">Adicionar ao Carrinho</button>
+            </div>
+            <div class="destino" data-id="destino-15">
+                <img src="pantanal.png" alt="Pantanal" class="destino-image">
+                <h3><a href="detalhes_pantanal.html" class="content-link">Pantanal, MT</a></h3>
+                <p>R$ 4.800,00</p>
+                <button class="add-to-cart" data-item-name="Pantanal" data-item-price="4800.00">Adicionar ao Carrinho</button>
+            </div>
+            <div class="destino" data-id="16">
+                <img src="chapada_diamantina.png" alt="Chapada Diamantina" class="destino-image">
+                <h3><a href="detalhes_chapada_diamantina.html" class="content-link">Chapada Diamantina, BA</a></h3>
+                <p>R$ 3.800,00</p>
+                <button class="add-to-cart" data-item-name="Chapada Diamantina" data-item-price="3800.00">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Redes Sociais</h3>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank">Facebook</a>
+                    <a href="https://twitter.com" target="_blank">Twitter</a>
+                    <a href="https://instagram.com" target="_blank">Instagram</a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Informações</h3>
+                <a href="sobre.html">Sobre Nós</a>
+                <a href="contato.html">Contato</a>
+                <a href="depoimentos.html">Depoimentos</a>
+            </div>
+            <div class="footer-column">
+                <h3>Ajuda</h3>
+                <a href="#">Termos de Serviço</a>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">FAQ</a>
+            </div>
+        </div>
+        <p>&copy; 2024 Viaje Bem. Todos os direitos reservados.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
